@@ -2,11 +2,10 @@ plugins {
     id 'java-library'
     id 'maven-publish'
     id 'signing'
-    id("maven-publish")
 }
 
-group = 'ch.cordalo'
-version = '1.0'
+group = 'com.cedricwalter'
+version = '1.0-SNAPSHOT'
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
