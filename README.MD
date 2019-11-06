@@ -21,5 +21,16 @@ version = '1.0-SNAPSHOT'
 
 ATTENTION. as expected, SNAPSHOT version can be publisehed more than once, version not (second run return 403 HTTP)
 
-run 
+run locally 
 `./gradle publish`
+
+Your artifacts are available at https://github.com/cedricwalter/cicd-github-package-registry/packages
+
+# Using your artifacts in gradle
+```
+repositories {
+        mavenCentral() 
+        jcenter()
+        maven { url 'https://maven.pkg.github.com/cedricwalter'}
+    }
+```
