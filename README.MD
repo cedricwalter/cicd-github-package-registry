@@ -23,7 +23,8 @@ ATTENTION. as expected, SNAPSHOT version can be publisehed more than once, versi
 
 # Create Releases or Snapshots
 ## locally 
-require a global gradle.properties 
+require a global gradle.properties (see above) then just run
+
 `./gradle publish`
 ## in travis-ci.org
 update the secure variable in .travis.yml to match YOUR project credential
