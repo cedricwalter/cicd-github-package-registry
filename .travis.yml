@@ -1,13 +1,20 @@
+env:
+  global:
+  #  to update first run: travis login
+  # GITHUB_SECRET_TOKEN, created with travis encrypt "GPR_USER=xxxxx"
+  - secure: "qpvsFimY6EkzgmLP/lrHX/On9Yu8jMW94ZcSEiP/NmkTHu0eJNBhfETd4WNjW7Ny69lDjU+/hHRVG0/ej2PcFRUPPtJged8A5DAfvI3YAqexo50Zx1EMyF8oXDDDzp/SvYTLJuAsBOml2HJcvHr5kWCp3yUPJWaB+P6kflxJ9iaDOglYRhmjFB8qhmDscgLtFwD9bXDUeHwVtVgG4nMUPLmdqfIhSBcC26oAMYHGmBYQGxelj4djkEPmGyeSlsJwXSkiLP1idIJb59JAY15rWCLavatrPagt2+9LFhyBdPS6Y14jLzoe6aZdB4Y9Odm6jo4J9URkkCPOndR2kUemqIU+gPGrcUSNvDdhLnZaqmFqpUPJX86rK2z8f9cLhDwa3+IIs8Ox3M2oxmvnpX+aA7C4ysKBqDJ236ooI8qXs0QU7ggU4APYWzu2/bucv097DNgGrRy69SlHvrGEyXZBTWGQIQb+//+Oms7yf4xUjyVevc7HOrP8bf9N9lhFMnwhPeKB69cOCyVx3zq6z3Q27xBnkzRQqQbeKKN+ms+60y8X3UJAwNVd8PnzncJ/oCZ/dlF33QzOhNavSS5pCYrozzzQXx3aOLPDzRVcrAH/aAHaggC9uphLI5lfVawYi7FLqvmKZRXMWoLJCmSc+RMTbxvmhuMs/GlfXeZwvckYArc="
+  # GITHUB_SECRET_TOKEN, created with travis encrypt "GPR_API_KEY=xxxxx"
+  - secure: "w5yzPFemXGzJABHB1zGqfkZyVt449r04CnMyJPpkfD3aR9djJba979BAT0HEMiuSAFwE9q9sU5p6NFfjtKZY1s98EyI5Fi9VZPLzJ3DxrJ+kAk6nJuoqF0lI/XGQ34OQ9Oj0b8uGzugIv1LItFXedtutuYLMro3oi+qK/yGcz2/KvLlRwb6Nd5QSy8q6ilebdOvO+7Bt5Y680DkzQkH2oAZFLs65sKMAc/hRtpDKNeNO4WPoOVcvDbptSIpYIh8wm7TqMuiuskr8li3rTXZ2bOBLJoQXi0ZLXpVjJvASXnPqwxQYqOORa02CSjO6Lz5r1XL/d2kZFYWwkUqMsYgNC/O0DMXr/Oeune26Ze80CSe49Cmcp7otj1OOv4WTFLirQX8nObJFm8Adaor+Nd9OSl1n+fgYIEsa7DG0Zl3hQSGk+8dI2aUOGfpR+4V7NrCWH5QGASkY1SOaB8NeSvm+vfQ8eKoqYBpGqVRC5XoMhhkrLyT0gf3HivRc/jAqgzT0mxPlJ8cmDbiY8oHxDD79TlVE6fkL0oQkjBptT2vsx3B7d1Nx1cYWesZZOubDqnJO3j3bGRdg3YQ3ONdNUoO9IMhF55JgNeBCZytg8CoWHtV8N/OuR/bRJDusJwlXfjeU+coYjhJeqSw/pR7lvlRspUzz8eVev10JN23EjzyBJBU="
 os: linux
 dist: xenial
 language: java
 jdk: openjdk8
 
-script: ./gradlew build
+script: ./gradlew build publish
 
 deploy:
   provider: releases
-  api_key:  
+  api_key:
     secure: $GITHUB_OAUTH_TOKEN
   file_glob: true
   file: build/**/*
