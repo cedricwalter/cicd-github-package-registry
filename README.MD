@@ -21,9 +21,19 @@ version = '1.0-SNAPSHOT'
 
 ATTENTION. as expected, SNAPSHOT version can be publisehed more than once, version not (second run return 403 HTTP)
 
-run locally 
+# Create Releases or Snapshots
+## locally 
+require a global gradle.properties 
 `./gradle publish`
+## in travis-ci.org
+update the secure variable in .travis.yml to match YOUR project credential
+```
+travis encrypt "GPR_USER=cedricwalter" --add
+travis encrypt "GPR_API_KEY=replace-with-matching-api-key" --add
+```
+that's all!
 
+# Viewing artifacts
 Your artifacts are available at https://github.com/cedricwalter/cicd-github-package-registry/packages
 
 # Using your artifacts in gradle
